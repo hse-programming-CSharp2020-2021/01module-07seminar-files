@@ -7,6 +7,12 @@ using System.IO;
  * Например, A = {30, 100, 300} B = {16, 64, 256}.
  * Если хотя бы один из элементов массива А находится вне заданного диапазона - выводить Incorrect Input
  * в консоль. Гарантируется, что на вход подается N целых чисел.
+ *
+ * Пример входных данных:
+ * 1 2 10 20
+ *
+ * Пример выходных данных:
+ * 0 2 8 16
  */
 
 namespace Task02
@@ -36,6 +42,7 @@ namespace Task02
             // TODO: implement this method
         }
 
+        // you do not need to fill your file manually, you can work with console input
         static void Main(string[] args)
         {
             // do not touch

@@ -1,14 +1,20 @@
-﻿/*
+﻿using System;
+using System.IO;
+
+/*
  * По массиву A целых чисел со значениями из диапазона [-10;10] создать массив булевских значений L.
  * Количество элементов в массивах совпадает.
- * На местах положительных элементов в массиве A
+ * На местах неотрицательных элементов в массиве A
  * в массиве L стоят значения true, на месте отрицательных – false.
  * Если хотя бы один из элементов массива А находится вне заданного диапазона - выводить Incorrect Input
  * в консоль. Гарантируется, что на вход подается N целых чисел.
+ *
+ * Пример входных данных:
+ * 0 -1
+ *
+ * Пример выходных данных:
+ * true false
  */
-
-using System;
-using System.IO;
 
 namespace _01_07_Files
 {
@@ -37,6 +43,7 @@ namespace _01_07_Files
             // TODO: implement this method
         }
 
+        // you do not need to fill your file, you can work with console input
         static void Main(string[] args)
         {
             // do not touch
