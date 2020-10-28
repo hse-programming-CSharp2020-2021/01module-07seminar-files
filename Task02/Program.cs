@@ -1,9 +1,12 @@
 ﻿using System;
+using System.IO;
 
 /*
  * По массиву A целых чисел со значениями из диапазона [0; 10000] создать массив целых чисел B,
  * в котором на каждой позиции стоит ближайшая степень двойки меньшая значения из массива A у той же позиции.
- * Например, A = {30, 100, 300} B = {16, 64, 256}
+ * Например, A = {30, 100, 300} B = {16, 64, 256}.
+ * Если хотя бы один из элементов массива А находится вне заданного диапазона - выводить Incorrect Input
+ * в консоль. Гарантируется, что на вход подается N целых чисел.
  */
 
 namespace Task02
@@ -17,29 +20,72 @@ namespace Task02
         {
             // TODO: implement this method
         }
+        
+        static bool CheckArray(int[] array)
+        {
+            // TODO: implement this method
+        }
+        
+        static int[] ConvertArray(int[] array)
+        {
+            // TODO: implement this method
+        }
 
         static void WriteFile(string path, int[] array)
         {
             // TODO: implement this method
         }
 
-        static int[] ConvertArray(int[] array)
-        {
-            // TODO: implement this method
-        }
-        
         static void Main(string[] args)
         {
+            // do not touch
+            FillFile();
+            
             int[] A;
             int[] B;
             
             try
             {
                 A = ReadFile(inputPath);
+                
+                if (!CheckArray(A))
+                    // TODO: implement this case
+                
                 B = ConvertArray(A);
                 WriteFile(outputPath, B);
             }
             // TODO: catch with meaningful message
+            
+            // do not touch
+            ConsoleOutput();
         }
+        
+        #region Testing methods for Github Classroom, do not touch!
+
+        static void FillFile()
+        {
+            try
+            {
+                File.WriteAllText(inputPath, Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        static void ConsoleOutput()
+        {
+            try
+            {
+                Console.WriteLine(File.ReadAllText(outputPath));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        #endregion
     }
 }

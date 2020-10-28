@@ -2,8 +2,13 @@
  * По массиву A целых чисел со значениями из диапазона [-10;10] создать массив булевских значений L.
  * Количество элементов в массивах совпадает.
  * На местах положительных элементов в массиве A
- * в массиве L стоят значения True, на месте отрицательных – False. 
+ * в массиве L стоят значения true, на месте отрицательных – false.
+ * Если хотя бы один из элементов массива А находится вне заданного диапазона - выводить Incorrect Input
+ * в консоль. Гарантируется, что на вход подается N целых чисел.
  */
+
+using System;
+using System.IO;
 
 namespace _01_07_Files
 {
@@ -17,28 +22,71 @@ namespace _01_07_Files
             // TODO: implement this method
         }
 
-        static void WriteFile(string path, bool[] array)
+        static bool CheckArray(int[] array)
         {
             // TODO: implement this method
         }
-
+        
         static bool[] IntToBoolArray(int[] array)
         {
             // TODO: implement this method
         }
         
+        static void WriteFile(string path, bool[] array)
+        {
+            // TODO: implement this method
+        }
+
         static void Main(string[] args)
         {
+            // do not touch
+            FillFile();
+            
             int[] A;
             bool[] L;
             
             try
             {
                 A = ReadFile(inputPath);
+                
+                if (!CheckArray(A))
+                    // TODO: implement this case
+                
                 L = IntToBoolArray(A);
                 WriteFile(outputPath, L);
             }
             // TODO: catch with meaningful message
+            
+            // do not touch
+            ConsoleOutput();
         }
+
+        #region Testing methods for Github Classroom, do not touch!
+
+        static void FillFile()
+        {
+            try
+            {
+                File.WriteAllText(inputPath, Console.ReadLine());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        static void ConsoleOutput()
+        {
+            try
+            {
+                Console.WriteLine(File.ReadAllText(outputPath));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        #endregion
     }
 }
